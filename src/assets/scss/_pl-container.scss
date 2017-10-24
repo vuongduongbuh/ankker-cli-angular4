@@ -1,0 +1,60 @@
+body {
+    background-color: $body-bg-color;
+}
+
+.pl-container {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.pl-header {
+    width: 100%;
+    padding-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+
+    &--feed {
+        justify-content: space-between;
+    }
+}
+
+.pl-input {
+    &--files {
+        width: 0;
+        height: 0;
+    }
+
+    &--main {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid $font-color-light-grey;
+    }
+}
+
+.btn-primary {
+    background-color: $font-color-blue;
+    font-weight: 100;
+
+    &:active {
+        background-color: $font-color-blue-bold;
+    }
+}
+
+.pl-icon {
+    width: 30px;
+    &--plus {
+        width: 20px;
+    }
+
+    &--more {
+        width: 20px;
+    }
+}
+
+.pl-loading {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}

@@ -3,8 +3,8 @@ export const AppConstants = {
     baseUrlLocal: 'http://localhost:7389/api',
     baseUrlStatic: 'https://api.pthings.io/static/',
     baseUrlStaticLocal: 'http://localhost:7389/static/',
-    auth0ClientId: 'Dk1L_G1OxTmhAuT0CMF0BByHQoPfZYKi',
-    auth0Domain: 'hbconsulting.eu.auth0.com',
+    auth0ClientId: '6hPaLCrSONTsrQkLNIRgaEknCEOG5Y3u',
+    auth0Domain: 'personallog.eu.auth0.com',
     getBaseURL: () => {
         let baseURL = AppConstants.baseUrl;
         if (window.location.origin.includes('localhost')) {

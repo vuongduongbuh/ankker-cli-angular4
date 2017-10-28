@@ -8,6 +8,9 @@ import { StoreModule } from "@ngrx/store";
 import { EffectsModule } from "@ngrx/effects";
 import { reducer } from './store/index';
 
+//Import effects
+import { AuthEffects } from './store/auth/auth.effects';
+
 //Import services 
 import { HttpService } from './services/http.service';
 import { AuthService } from './services/auth.service';
@@ -30,9 +33,26 @@ import { AkFeedComponent } from './components/feed/feed';
 import { AkFeedCreateComponent } from './components/feed/create/create';
 
 const appRoutes: Routes = [
-  { path: '', component: AppHome },
-  { path: 'feed', component: AppFeed },
-  { path: 'search', component: AppSearch }
+  {
+    path: '', component: AppHome, data: {
+      requiredAuth: false
+    }
+  },
+  {
+    path: 'feed', component: AppFeed, data: {
+      requiredAuth: true
+    }
+  },
+  {
+    path: 'search', component: AppSearch, data: {
+      requiredAuth: true
+    }
+  }
+];
+
+//Define effects
+const AppEffectsRun = [
+  EffectsModule.run(AuthEffects)
 ];
 
 @NgModule({
@@ -55,14 +75,19 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    StoreModule.provideStore(reducer)
+    StoreModule.provideStore(reducer),
+    EffectsModule,
+    HttpModule,
+    ...AppEffectsRun
   ],
   providers: [
     {
       provide: Http,
       useFactory: httpFactory,
       deps: [XHRBackend, RequestOptions, Router]
-    }
+    },
+    HttpService,
+    AuthService
   ],
   bootstrap: [App]
 })

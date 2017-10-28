@@ -1,34 +1,35 @@
-import * as feed from './feed.actions';
+import * as auth from './auth.actions';
 
 export interface State {
   loaded: boolean;
   loading: boolean;
-  feeds: Array<any>;
+  isLoggedIn: Boolean;
 };
 
 const initialState: State = {
   loaded: false,
   loading: false,
-  feeds: []
+  isLoggedIn: false
 };
 
-export function reducer(state = initialState, action: feed.Actions): State {
+export function reducer(state = initialState, action: auth.Actions): State {
   switch (action.type) {
 
-    case feed.LOAD: {
+    case auth.LOGIN: {
       return Object.assign({}, state, {
         loading: true
       });
     }
 
-    case feed.LOAD_SUCCESS: {
+    case auth.LOGIN_SUCCESS: {
       return Object.assign({}, state, {
         loaded: true,
-        loading: false
+        loading: false,
+        isLoggedIn: true
       });
     }
 
-    case feed.LOAD_FAILED: {
+    case auth.LOGIN_FAILED: {
       return Object.assign({}, state, {
         loaded: true,
         loading: false
@@ -45,4 +46,4 @@ export function reducer(state = initialState, action: feed.Actions): State {
  used in the categories-list component
  */
 export const getLoadingState = (state: State) => state.loading;
-export const getFeeds = (state: State) => state.feeds;
+export const getIsLoggedIn = (state: State) => state.isLoggedIn;

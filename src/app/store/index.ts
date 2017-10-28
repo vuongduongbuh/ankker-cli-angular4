@@ -15,14 +15,17 @@ import { state } from "@angular/core";
  Import the layout state
  */
 import * as feed from "./feed/feed.reducer";
+import * as auth from "./auth/auth.reducer";
 
 
 export interface AppState {
+    auth: auth.State,
     feed: feed.State
 }
 
 export const reducers = {
-    feed: feed.reducer
+    feed: feed.reducer,
+    auth: auth.reducer
 };
 
 
@@ -38,3 +41,9 @@ export function reducer(state: any, action: any) {
 Feed
  */
 export const layoutGetState = (state: AppState) => state.feed;
+
+/*
+Feed
+ */
+export const authGetState = (state: AppState) => state.auth;
+export const authIsLoggedIn = (state: AppState) => createSelector(authGetState, auth.getIsLoggedIn);

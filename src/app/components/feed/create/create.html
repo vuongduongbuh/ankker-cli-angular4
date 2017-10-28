@@ -1,0 +1,23 @@
+<div class="ak-feed-create">
+    <div class="ak-feed-create--on-blur" (click)="openCompose = true" *ngIf="!openCompose">
+        <span>What's on your mind</span>
+    </div>
+
+    <div class="ak-feed-create--on-focus" *ngIf="openCompose">
+        <textarea maxLength="250" rows="3" placeholder="Start typing"> </textarea>
+
+        <div class="ak-feed-create__actions">
+            <div>
+                <a>
+                    <!--<img class="pl-icon pl-icon--user" src="./assets/img/icon-camera.png">-->
+                </a>
+            </div>
+
+            <div>
+                <h4>50</h4>
+                <button type="button" class="btn ak-btn ak-btn--blue" (click)="openCompose = false">Done</button>
+            </div>
+        </div>
+
+    </div>
+</div>

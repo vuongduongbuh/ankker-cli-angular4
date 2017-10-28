@@ -1,0 +1,21 @@
+.app-feed {
+    width: 900px;
+    margin: 0 auto;
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+
+        button {
+            &:first-child {
+                width: 38px;
+                height: 38px;
+            }
+        }
+    }
+
+    &__feed {
+        margin: 0 auto;
+        width: 610px;
+    }
+}

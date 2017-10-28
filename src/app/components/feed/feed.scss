@@ -6,46 +6,72 @@
     cursor: pointer;
     border: 2px solid #D5DEE8;
 
+    &:hover {
+        background-color: #D5DEE8;
+
+        .ak-feed {
+            &__info {
+                &__tag {
+                    color: #fff;
+                    span {
+                        background-color: #597CA4;
+                    }
+                }
+
+                &__time {
+                    display: none;
+                }
+
+                &__actions {
+                    display: flex;
+                }
+            }
+        }
+    }
+
     &__content {
         overflow: hidden;
         text-overflow: ellipsis;
         justify-content: space-between;
         display: flex;
-
-        &__time {
-            color: #C4C4C4;
-            font-size: 12px;
-        }
     }
 
     &__image {
+        img {
+            width: 100%;
+        }
         width: 550px;
         margin: 0 auto;
         padding: 10px 0;
     }
 
-    &__tag {
-        color: #597CA4;
-        padding: 5px 0;
-        display: inline-block;
-        span {
-            background-color: #D6DEE6;
-            padding: 5px 15px;
-            margin-right: 5px;
-            border-radius: 5px;
-            font-size: 11px;
-        }
-    }
-
-    &__actions {
-        display: inline-block;
-        color: #597CA4;
-        float: right;
-        padding-top: 10px;
-        a {
-            margin-left: 30px;
-            margin-right: 5px;
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__tag {
             color: #597CA4;
+            padding: 5px 0;
+            display: inline-block;
+            span {
+                background-color: #D6DEE6;
+                padding: 5px 15px;
+                margin-right: 5px;
+                border-radius: 5px;
+                font-size: 11px;
+            }
+        }
+
+        &__actions {
+            display: none;
+            a {
+                color: #597CA4;
+            }
+        }
+
+        &__time {
+            color: #C4C4C4;
+            font-size: 12px;
         }
     }
 }

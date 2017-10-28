@@ -1,20 +1,4 @@
 //Import variables
 @import '_variables';
-
-
-.ak-btn {
-  width: 120px;
-  &--blue {
-    background-color: #597CA4;
-    color: #FFF;
-  }
-
-  &--grey {
-    background-color: #D5DEE8;
-    color: #003366;
-  }
-}
-
-.app-container {
-  max-width: 900px;
-}
+@import '_buttons';
+@import "_containers";

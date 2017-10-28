@@ -1,20 +1,23 @@
 .app-home{
   &__login{
-      display: flex;
-      justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
   }
 
   &__register{
     width: 610px;
     &__title{
       font-size: 13px;
+      h4{
+        color: #597CA4;
+      }
     }
     &__footer{
       display: flex;
       justify-content: flex-end;
       padding-top: 20px;
-      button {
-        margin-left: 3px;
+      button{
+        margin-left: 4px;
       }
     }
   }

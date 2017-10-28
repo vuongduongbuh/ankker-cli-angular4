@@ -1,39 +1,45 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
-import { AppHome } from './modules/home/home';
 
 //Import layouts
+import { AppComponent } from './app.component';
 import { AppHeader } from './layouts/header/header';
 import { AppContent } from './layouts/content/content';
 
 //Import modules
-import { } from './modules'
+import { AppHome } from './modules/home/home';
+import { AppFeed } from './modules/feed/feed';
+import { AppSearch } from './modules/search/search';
 
 //Import comonents
-import { AkFeedComponent  } from './components/feed/feed';
+import { AkFeedComponent } from './components/feed/feed';
 
-// const appRoutes: Routes = [
-//   { path: '/feed', component: CrisisListComponent },
-//   { path: 'hero/:id',      component: HeroDetailComponent }
-// ];
+const appRoutes: Routes = [
+  { path: '', component: AppHome },
+  { path: 'feed', component: AppFeed },
+  { path: 'search', component: AppSearch }
+];
 
 @NgModule({
   declarations: [
+    //Import layouts
     AppComponent,
+    AppHeader,
+    AppContent,
+
+    //Import modules
     AppHome,
-    
+    AppFeed,
+    AppSearch,
+
     //Import components
     AkFeedComponent
-    
+
   ],
   imports: [
-    BrowserModule
-    // RouterModule.forRoot(
-    //   appRoutes,
-    //   { enableTracing: true }
-    // )
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

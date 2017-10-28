@@ -1,0 +1,18 @@
+.app-home{
+  &__login{
+    .col-md-12{
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  &__register{
+    display: block;
+    &__title{
+      font-size: 13px;
+    }
+    &__footer{
+      justify-content: flex-end;
+    }
+  }
+}

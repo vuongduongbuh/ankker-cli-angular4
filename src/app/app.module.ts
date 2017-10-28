@@ -2,6 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+//Import ngRx Store
+import { StoreModule } from "@ngrx/store";
+import { EffectsModule } from "@ngrx/effects";
+import { reducer } from './store/index';
+
 //Import layouts
 import { AppComponent } from './app.component';
 import { AppHeader } from './layouts/header/header';
@@ -39,7 +44,8 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    StoreModule.provideStore(reducer)
   ],
   providers: [],
   bootstrap: [AppComponent]

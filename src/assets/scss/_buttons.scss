@@ -1,0 +1,21 @@
+.ak-btn{
+  width: 120px;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(34, 34, 34, 0.17);
+  transition: 300ms ease-in;
+  &--blue{
+    &:hover{
+      background: #80A7D1;
+    }
+    background-color: #597CA4;
+    color: #FFF;
+  }
+  &--grey{
+    &:hover{
+      background: #E1EAF4;
+    }
+    background-color: #D5DEE8;
+    color: #003366;
+  }
+}

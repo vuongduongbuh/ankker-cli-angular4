@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { AppHome } from './modules/home/home';
 
 //Import layouts
 import { AppHeader } from './layouts/header/header';
@@ -21,9 +22,11 @@ import { AkFeedComponent  } from './components/feed/feed';
 @NgModule({
   declarations: [
     AppComponent,
-
+    AppHome,
+    
     //Import components
     AkFeedComponent
+    
   ],
   imports: [
     BrowserModule
